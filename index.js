@@ -31,13 +31,13 @@ function getWeatherData() {
         fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
             .then(response=>response.json())
             .then(data=>{
-                console.log(data);
+                // console.log(data);
                 aqi=data.list[0].main.aqi;
                 console.log(aqi);
                 fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 showData(data);
             })
             });
