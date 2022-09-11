@@ -19,12 +19,14 @@ body{
     margin: 2vh;
     padding: 2rem 4rem;
     font-family: 'Merriweather', serif;
+    backdrop-filter: blur(3px);
+    height: 95%;
+    border-radius: 10px;
 }
 
 .current_data{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .date_data{
@@ -60,7 +62,8 @@ body{
 .current_data .current_weather_data{
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap:2rem;
     background: rgba(24,24,27, 0.6);
     padding:20px;
     border-radius: 20px;
@@ -68,94 +71,32 @@ body{
     border: 1px solid #eee;
 }
 
-.forecast{
-    background: rgba(24,24,27,0.8);
-    padding: 25px;
-    position:fixed;
-    bottom: 0;
+.current_weather_data>img{
+    width: 5rem;
+    height: 4rem;
+}
+
+.data_rapi .data_item{
+    margin: 0.5rem;
     display: flex;
-    color:white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
+    justify-content: space-between;
+    gap:2rem;
 }
-
-.forecast .today{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding:15px;
-    padding-right: 40px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.2)
-}
-
-.forecast .today .day{
-    padding: 5px 15px;
-    background: #3c3c44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.forecast .today .temp{
-    font-size: 18px;
-    padding-top: 15px;
-}
-
-.forecast .weather_forecast{
-    display: flex;
-}
-
-.weather_forecast .forecast_item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    border: 1px solid #eee;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.2)
-}
-
-.forecast .forecast_item .day{
-    padding: 5px 15px;
-    background: #3C3C44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.forecast .forecast_item .temp{
-    font-weight: 100;
-    font-size: 12px;
-}
-
 
 @media only screen and  (max-width:730px){
-    
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
+
     .container{
         padding: 20px;
     }
-    
-    .forecast{
-        justify-content: start;
-        align-items: none;
-        overflow-y: scroll;
-    }
-
-    .forecast .today .temp{
-        font-size: 16px;
-    }
 
     .date_data .time{
-        font-size: 50px;
+        font-size: 35px;
     }
 
-    .date_data #am-pm{
+    .date_data #AM-PM{
         font-size: 20px;
     }
 
@@ -169,15 +110,7 @@ body{
     }
 
     .place_data .time_zone{
-        font-size: 20px;
-    }
-
-    .current_data .others{
-        padding: 12px;
-    }
-
-    .current_data .others .weather_item{
-        font-size: 14px;
+        font-size: 19px;
     }
 
 }
