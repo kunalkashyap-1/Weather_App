@@ -49,13 +49,13 @@ body{
     text-align: end;
 }
 
-.place_data .time_zone{
+.place_data .loc{
     font-size: 30px;
     font-weight: 100;
 }
 
 .place_data .country{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
 }
 
@@ -63,15 +63,20 @@ body{
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-wrap: wrap;
-    gap:2rem;
+    gap:4rem;
     background: rgba(24,24,27, 0.6);
     padding:20px;
     border-radius: 20px;
-    margin: 10px 0;
+    margin: 9rem 0;
     border: 1px solid #eee;
 }
 
-.current_weather_data>img{
+/* .image_section{
+    display: grid;
+    row-gap: 0.5rem;
+} */
+
+.image_section>img{
     width: 5rem;
     height: 4rem;
 }
@@ -83,10 +88,19 @@ body{
     gap:2rem;
 }
 
+#aqi{
+    display: flex;
+    gap: 2rem;
+}
+
 @media only screen and  (max-width:730px){
     ::-webkit-scrollbar { 
         display: none; 
     }
+    .image_section{
+    display: grid;
+    row-gap: 0.5rem;
+}
 
     .container{
         padding: 20px;
@@ -109,8 +123,16 @@ body{
         margin-top: 15px;
     }
 
-    .place_data .time_zone{
+    .place_data .loc{
         font-size: 19px;
     }
 
+    .current_data .current_weather_data{
+        gap:2rem;
+        margin-top: 2rem;
+    }
+
+    .data_rapi .data_item{
+        margin: 0;
+    }
 }

@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="shortcut icon" href="css/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href="css/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="container">
-    <section class="current_data">
-            <div class="date_data">
-                <div class="time" id="time">
-                    00:00 <span id="AM-PM">AM</span>
-                </div>
-                <div class="date" id="date">
-                    Sunday, 11 Sep
-                </div>
-                <div class="current_weather_data" id="current_weather_data">
-                    <img src="css/images/loading.png" alt="">
-                    <section class="data_rapi">
-                    <div class="data_item">
-                        <div ><strong>Humidity</strong></div>
-                        <div>89.7%</div>
-                    </div>
-                    <div class="data_item">
-                        <div><strong>Visibility</strong></div>
-                        <div>89.7%</div>
-                    </div><div class="data_item">
-                        <div><strong>Wind Speed</strong></div>
-                        <div>89.7%</div>
-                    </div><div class="data_item">
-                        <div><strong>pressure</strong></div>
-                        <div>89.7%</div>
-                    </div>
-                </section>
-                </div>
+      <section class="current_data">
+        <div class="date_data">
+          <div class="time" id="time">00:00 <span id="AM-PM">AM</span></div>
+          <div class="date" id="date">Sunday, 11 Sep</div>
+          <div class="current_weather_data" id="current_weather_data">
+            <div class="image_section">
+              <img src="css/images/loading.png" alt="" />
+              <div><strong>loading</strong></div>
+              <div id="aqi">Aqi </div>
             </div>
-            <div class="place_data">
-                <div class="time_zone" id="time_zone">Asia/Kolkata</div>
-                <div class="country" id="country">IN</div>
-            </div>
-    </section>
-</div>
-
+            <section class="data_rapi">
+              <div class="data_item">
+                <div><strong>Humidity</strong></div>
+                <div>89.7%</div>
+              </div>
+              <div class="data_item">
+                <div><strong>Visibility</strong></div>
+                <div>89.7%</div>
+              </div>
+              <div class="data_item">
+                <div><strong>Wind Speed</strong></div>
+                <div>89.7%</div>
+              </div>
+              <div class="data_item">
+                <div><strong>pressure</strong></div>
+                <div>89.7%</div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="place_data">
+          <div class="loc" id="loc">Asia</div>
+          <div class="country" id="country">IN</div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
