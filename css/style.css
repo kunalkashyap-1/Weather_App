@@ -1,138 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-image: url(images/test_image.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    overflow:hidden;
-    height:100vh;
-    font-family: 'Roboto', sans-serif;
+body {
+  background-image: url(images/test_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
-.container{
-    color:whitesmoke;
-    margin: 2vh;
-    padding: 2rem 4rem;
-    font-family: 'Merriweather', serif;
-    backdrop-filter: blur(3px);
-    height: 95%;
-    border-radius: 10px;
+.container {
+  color: whitesmoke;
+  margin: 2vh;
+  padding: 2rem 4rem;
+  font-family: "Merriweather", serif;
+  backdrop-filter: blur(3px);
+  height: 95%;
+  border-radius: 10px;
 }
 
-.current_data{
-    display: flex;
-    justify-content: space-between;
+.current_data {
+  display: flex;
+  justify-content: space-between;
 }
 
-.date_data{
-    font-weight: 100;
+.date_data {
+  font-weight: 100;
 }
-.date_data .time{
-    font-size: 70px;
-}
-
-.date_data #AM-PM{
-    font-size: 30px;
-    margin-left: 5px;
+.date_data .time {
+  font-size: 70px;
 }
 
-.date_data .date{
-    font-size: 30px;
+.date_data #AM-PM {
+  font-size: 30px;
+  margin-left: 5px;
 }
 
-.place_data{
-    text-align: end;
+.date_data .date {
+  font-size: 30px;
 }
 
-.place_data .loc{
-    font-size: 30px;
-    font-weight: 100;
+.place_data {
+  text-align: end;
 }
 
-.place_data .country{
-    font-size: 15px;
-    font-weight: 700;
+.place_data .loc {
+  font-size: 30px;
+  font-weight: 100;
 }
 
-.current_data .current_weather_data{
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    gap:4rem;
-    background: rgba(24,24,27, 0.6);
-    padding:20px;
-    border-radius: 20px;
-    margin: 9rem 0;
-    border: 1px solid #eee;
+.place_data .country {
+  font-size: 15px;
+  font-weight: 700;
 }
 
-.image_section{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.current_data .current_weather_data {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  background: rgba(24, 24, 27, 0.6);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 9rem 0;
+  border: 1px solid #eee;
 }
 
-.image_section>img{
-    width: 5rem;
-    height: 4rem;
+.image_section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.data_rapi .data_item{
-    margin: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    gap:2rem;
+.image_section > img {
+  width: 5rem;
+  height: 4rem;
 }
 
-#aqi{
-    display: flex;
-    gap: 2rem;
+.data_rapi .data_item {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-@media only screen and  (max-width:730px){
-    ::-webkit-scrollbar { 
-        display: none; 
-    }
-    .image_section{
+#aqi {
+  display: flex;
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 730px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .image_section {
     row-gap: 0.5rem;
-    }
+  }
 
-    .container{
-        padding: 20px;
-    }
+  .container {
+    padding: 20px;
+  }
 
-    .date_data .time{
-        font-size: 35px;
-    }
+  .date_data .time {
+    font-size: 35px;
+  }
 
-    .date_data #AM-PM{
-        font-size: 20px;
-    }
+  .date_data #AM-PM {
+    font-size: 20px;
+  }
 
-    .date_data .date{
-        font-size: 20px;
-    }
+  .date_data .date {
+    font-size: 20px;
+  }
 
-    .place_data{
-        text-align: end;
-        margin-top: 15px;
-    }
+  .place_data {
+    text-align: end;
+    margin-top: 15px;
+  }
 
-    .place_data .loc{
-        font-size: 19px;
-    }
+  .place_data .loc {
+    font-size: 19px;
+  }
 
-    .current_data .current_weather_data{
-        gap:2rem;
-        margin-top: 2rem;
-    }
+  .current_data .current_weather_data {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-    .data_rapi .data_item{
-        margin: 0;
-    }
+  .data_rapi .data_item {
+    margin: 0;
+  }
 }

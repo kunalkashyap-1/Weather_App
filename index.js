@@ -3,12 +3,12 @@ const date_data = document.getElementById("date");
 const currentWeatherItems = document.getElementById("current_weather_data");
 const loc = document.getElementById("loc");
 const country_data = document.getElementById("country");
-const aqi_data=document.getElementById("aqi");
+const aqi_data = document.getElementById("aqi");
 let aqi;
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const aqis = ["what! really","Good","Fair","Moderate","Poor","Very Poor"];
+const aqis = ["what! really", "Good", "Fair", "Moderate", "Poor", "Very Poor"];
 
 const API_KEY = "f68ab141beada1ae2477e32a1215699e";
 
@@ -29,19 +29,19 @@ function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
         let { latitude, longitude } = success.coords;//this is object destructuring 
         fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
-            .then(response=>response.json())
-            .then(data=>{
-                // console.log(data);
-                aqi=data.list[0].main.aqi;
-                // console.log(aqi);
-                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
             .then(response => response.json())
             .then(data => {
                 // console.log(data);
-                showData(data);
-            })
+                aqi = data.list[0].main.aqi;
+                // console.log(aqi);
+                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // console.log(data);
+                        showData(data);
+                    })
             });
-        
+
     })
 }
 
@@ -49,11 +49,11 @@ function showData(data) {
     let { humidity, pressure, temp } = data.list[0].main;
     let { visibility } = data.list[0];
     let { speed } = data.list[0].wind;
-    let { name, country, sunrise, sunset} = data.city;
+    let { name, country, sunrise, sunset } = data.city;
     let { description, icon } = data.list[0].weather[0];
 
-    loc.innerHTML=name;
-    country_data.innerHTML=country
+    loc.innerHTML = name;
+    country_data.innerHTML = country
     currentWeatherItems.innerHTML = `
     <div class="image_section">
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="current weather image">
@@ -83,11 +83,11 @@ function showData(data) {
     </div>
     <div class="data_item">
         <div><strong>Sunrise</strong></div>
-        <div>${window.moment(sunrise*1000).format("HH:MM a")}</div>
+        <div>${window.moment(sunrise * 1000).format("HH:MM a")}</div>
     </div>
     <div class="data_item">
         <div><strong>Sunset</strong></div>
-        <div>${window.moment(sunset*1000).format("HH:MM a")}</div>
+        <div>${window.moment(sunset * 1000).format("HH:MM a")}</div>
     </div>`
 }
 
