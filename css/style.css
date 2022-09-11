@@ -71,10 +71,11 @@ body{
     border: 1px solid #eee;
 }
 
-/* .image_section{
-    display: grid;
-    row-gap: 0.5rem;
-} */
+.image_section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
 .image_section>img{
     width: 5rem;
@@ -98,9 +99,8 @@ body{
         display: none; 
     }
     .image_section{
-    display: grid;
     row-gap: 0.5rem;
-}
+    }
 
     .container{
         padding: 20px;

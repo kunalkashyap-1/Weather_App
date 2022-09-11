@@ -59,7 +59,7 @@ function showData(data) {
     <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="current weather image">
     <div><strong>${description}</strong></div>
     <div id="aqi"><strong>Aqi</strong> 
-    <div>${aqi}-${aqis[aqi]}</div>
+    <div>${aqi} - ${aqis[aqi]}</div>
     </div>
     </div>
     <section class="data_rapi">
@@ -69,17 +69,17 @@ function showData(data) {
     </div>
     <div class="data_item">
         <div ><strong>Humidity</strong></div>
-        <div>${humidity}</div>
+        <div>${humidity}%</div>
     </div>
     <div class="data_item">
         <div><strong>Visibility</strong></div>
         <div>${visibility}</div>
     </div><div class="data_item">
         <div><strong>Wind Speed</strong></div>
-        <div>${speed}</div>
+        <div>${speed} m/s</div>
     </div><div class="data_item">
         <div><strong>Pressure</strong></div>
-        <div>${pressure}</div>
+        <div>${pressure} hpa</div>
     </div>
     <div class="data_item">
         <div><strong>Sunrise</strong></div>
