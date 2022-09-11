@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url(css/images/test_image.jpg);
+    background-image: url(.../images/test_image.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     overflow:hidden;
