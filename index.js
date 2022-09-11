@@ -28,7 +28,7 @@ setInterval(function () {
 function getWeatherData() {
     navigator.geolocation.getCurrentPosition((success) => {
         let { latitude, longitude } = success.coords;//this is object destructuring 
-        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
             .then(response=>response.json())
             .then(data=>{
                 console.log(data);
@@ -56,7 +56,7 @@ function showData(data) {
     country_data.innerHTML=country
     currentWeatherItems.innerHTML = `
     <div class="image_section">
-    <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="current weather image">
+    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="current weather image">
     <div><strong>${description}</strong></div>
     <div id="aqi"><strong>Aqi</strong> 
     <div>${aqi} - ${aqis[aqi]}</div>
