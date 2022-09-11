@@ -27,8 +27,20 @@ setInterval(function(){
 function getWeatherData(){
     navigator.geolocation.getCurrentPosition((success)=>{
         let {latitude,longitude}=success.coords;//this is object destructuring 
-        
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`)
+        .then(response=>response.json())
+        .then(data=>{
+            console.log(data);
+            showData(data);
+        });
     })
+}
+
+function showData(data){
+    let {humidity,pressure,visibility}=data.list[0].main;
+    console.log(humidity);
+    let {speed}=data.list[0].wind;
+    console.log(speed);
 }
 
 getWeatherData();
