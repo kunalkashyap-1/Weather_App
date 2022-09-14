@@ -34,10 +34,10 @@ function getWeatherData() {
                 // console.log(data);
                 aqi = data.list[0].main.aqi;
                 // console.log(aqi);
-                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
+                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         showData(data);
                     })
             });
@@ -46,11 +46,11 @@ function getWeatherData() {
 }
 
 function showData(data) {
-    let { humidity, pressure, temp } = data.list[0].main;
-    let { visibility } = data.list[0];
-    let { speed } = data.list[0].wind;
-    let { name, country} = data.city;
-    let { description, icon,main } = data.list[0].weather[0];
+    let { humidity, pressure, temp } = data.main;
+    let { visibility,name } = data;
+    let { speed } = data.wind;
+    let { country} = data.sys;
+    let { description, icon,main } = data.weather[0];
 
     loc.innerHTML = name;
     country_data.innerHTML = country
