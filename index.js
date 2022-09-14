@@ -37,7 +37,7 @@ function getWeatherData() {
                 fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&cnt=1&appid=${API_KEY}`)
                     .then(response => response.json())
                     .then(data => {
-                        // console.log(data);
+                        console.log(data);
                         showData(data);
                     })
             });
@@ -49,14 +49,15 @@ function showData(data) {
     let { humidity, pressure, temp } = data.list[0].main;
     let { visibility } = data.list[0];
     let { speed } = data.list[0].wind;
-    let { name, country, sunrise, sunset } = data.city;
-    let { description, icon } = data.list[0].weather[0];
+    let { name, country} = data.city;
+    let { description, icon,main } = data.list[0].weather[0];
 
     loc.innerHTML = name;
     country_data.innerHTML = country
     currentWeatherItems.innerHTML = `
     <div class="image_section">
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="current weather image">
+    <div><strong>${main}</strong></div>
     <div><strong>${description}</strong></div>
     <div id="aqi"><strong>Aqi</strong> 
     <div>${aqi} - ${aqis[aqi]}</div>
@@ -80,14 +81,6 @@ function showData(data) {
     </div><div class="data_item">
         <div><strong>Pressure</strong></div>
         <div>${pressure} hpa</div>
-    </div>
-    <div class="data_item">
-        <div><strong>Sunrise</strong></div>
-        <div>${window.moment(sunrise * 1000).format("HH:MM a")}</div>
-    </div>
-    <div class="data_item">
-        <div><strong>Sunset</strong></div>
-        <div>${window.moment(sunset * 1000).format("HH:MM a")}</div>
     </div>`
 }
 
